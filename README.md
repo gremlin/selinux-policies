@@ -143,5 +143,5 @@ semodule -r gremlin
 [configure_kubernetes]: #configure-openshift
 [about_scc]: https://docs.openshift.com/container-platform/4.5/authentication/managing-security-context-constraints.html#:~:text=Updating%20an%20SCC-,About%20Security%20Context%20Constraints,what%20resources%20it%20can%20access.
 [about_allowcontainert]: https://gremlin.com/docs/security/overview/#bypass-container_t-restrictions
-[containersudica]: https://github.com/containers/udica
+[about_containersudica]: https://github.com/containers/udica
 [gremlinpolicy]: https://github.com/gremlin/selinux-policies/blob/master/policies/gremlin_container.cil
