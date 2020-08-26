@@ -1,0 +1,13 @@
+(block gremlin
+    (blockinherit container)
+    (blockinherit net_container)
+    (allow process proc_t (lnk_file (read)))
+    (allow process container_log_t ( dir ( open read getattr lock search ioctl add_name remove_name write create rmdir ))) 
+    (allow process container_log_t ( file ( getattr read write append ioctl lock map open create unlink ))) 
+    (allow process container_log_t ( sock_file ( getattr read write append open ))) 
+    (allow process container_var_lib_t ( dir ( open read getattr lock search ioctl add_name remove_name write create rmdir ))) 
+    (allow process container_var_lib_t ( file ( getattr read write append ioctl lock map open create unlink ))) 
+    (allow process container_var_lib_t ( sock_file ( getattr read write append open ))) 
+    (allow process container_runtime_t ( unix_stream_socket ( connectto ))) 
+)
+
