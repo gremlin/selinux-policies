@@ -1,3 +1,5 @@
+VERSION		?=	v0.0.1
+
 all: gremlin-openshift3.cil
 
 clean: 
@@ -15,3 +17,8 @@ install-openshift3:
 
 uninstall:
 	semodule -r gremlin
+
+release:
+	mkdir -p selinux-policies-$(VERSION)
+	cp gremlin-openshift3.cil selinux-policies-$(VERSION)
+	tar czf selinux-policies-$(VERSION).tar.gz selinux-policies-$(VERSION)
