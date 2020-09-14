@@ -1,6 +1,6 @@
 VERSION		?=	v0.0.2
 
-all: gremlin-openshift3.cil
+all: gremlin-openshift4.cil
 
 clean: 
 	rm -fr udica/
@@ -30,4 +30,5 @@ uninstall-openshift4:
 release:
 	mkdir -p selinux-policies-$(VERSION)
 	cp gremlin-openshift3.cil selinux-policies-$(VERSION)
+	cp gremlin-openshift4.cil selinux-policies-$(VERSION)
 	tar czf selinux-policies-$(VERSION).tar.gz selinux-policies-$(VERSION)
