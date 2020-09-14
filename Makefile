@@ -1,4 +1,4 @@
-VERSION		?=	v0.0.1
+VERSION		?=	v0.0.2
 
 all: gremlin-openshift3.cil
 
@@ -9,14 +9,23 @@ clean:
 gremlin-openshift3.cil: udica/udica/templates
 	cat udica/udica/templates/base_container.cil udica/udica/templates/net_container.cil policies/gremlin-openshift3.cil > $@
 
+gremlin-openshift4.cil: udica/udica/templates
+	cat udica/udica/templates/base_container.cil udica/udica/templates/net_container.cil policies/gremlin-openshift4.cil > $@
+
 udica/udica/templates:
 	git clone https://github.com/containers/udica
 
 install-openshift3:
 	semodule -i gremlin-openshift3.cil
 
-uninstall:
-	semodule -r gremlin
+install-openshift4:
+	semodule -i gremlin-openshift4.cil
+
+uninstall-openshift3:
+	semodule -r gremlin gremlin-openshift3
+
+uninstall-openshift4:
+	semodule -r gremlin gremlin-openshift4
 
 release:
 	mkdir -p selinux-policies-$(VERSION)
