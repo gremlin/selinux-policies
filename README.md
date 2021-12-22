@@ -46,7 +46,6 @@ You you can follow the remaining subsections to install directly from source.
 
 ### Install build tools
 
-
 ```shell
 yum install git
 ```
