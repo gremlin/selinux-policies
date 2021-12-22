@@ -29,7 +29,7 @@ Gremlin builds on the SELinux inheritance patterns set out in [containers/udica]
 | Policy Version | OpenShift 3.x | OpenShift 4.x |
 | -------------- | --------------| ------------- |
 | v0.0.1         | ✓             | ✘             |
-| v0.0.2         | ✓             | Issue with OpenShift +4.2 (https://github.com/gremlin/selinux-policies/issues/3) |
+| v0.0.2         | ✓             | Issue with OpenShift +4.2 ([Issue #3](/gremlin/selinux-policies/issues/3)) |
 | v0.0.3         | ✓             | ✓             |
 
 ## Installation
