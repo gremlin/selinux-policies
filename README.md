@@ -1,6 +1,6 @@
 # Gremlin SELinux Policies
 
-The repository contains a set of SELinux policies that can be applied to Linux systems for the purpose of granting various priviledges to Gremlin.
+This repository contains a set of SELinux policies that can be applied to Linux systems for the purpose of granting various priviledges to Gremlin.
 
 
 ## What is SELinux?
@@ -42,7 +42,7 @@ tar xzf selinux-policies-v0.0.3.tar.gz
 sudo semodule -i selinux-policies-v0.0.3/gremlin-openshift3.cil
 ```
 
-You you can follow the remaining subsections to install directly from source.
+You can follow the remaining subsections to install directly from source.
 
 ### Install build tools
 
@@ -71,7 +71,7 @@ semodule -i gremlin-openshift3.cil
 
 ## Configuration
 
-This policy creates a new SELinux process type `gremlin.process`, you must run your Gremlin containers under this type. Use the section that corresponds to your runtime target.
+This policy creates a new SELinux process type `gremlin.process`. You must run your Gremlin containers under this type. Use the section that corresponds to your runtime target.
 
 ### Configure: Docker
 
