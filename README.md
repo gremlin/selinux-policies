@@ -85,17 +85,6 @@ docker run -it \
 	gremlin/gremlin daemon
 ```
 
-### Configure: Kubernetes
-
-To make the Gremlin daemonset run within the `gremlin.process` context, place the following `securityContext` into the existing Gremlin daemonset YAML.
-
-```yaml
-...
-securityContext:
-  seLinuxOptions:
-    type: gremlin.process
-```
-
 ### Configure: OpenShift
 
 Like [the configuration for kubernetes][config_kubernetes], the Gremlin daemonset must run with the `gremlin.process` SELinux context. For openshift, this should be controlled through a [SecurityContextConstraints][about_scc] policy instead of directly through a Kubernetes `securityContext`.
