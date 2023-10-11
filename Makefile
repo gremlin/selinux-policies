@@ -12,6 +12,9 @@ gremlin-openshift3.cil: udica/udica/templates
 gremlin-openshift4.cil: udica/udica/templates
 	cat udica/udica/templates/base_container.cil udica/udica/templates/net_container.cil policies/gremlin-openshift4.cil > $@
 
+bottlerocket.cil: udica/udica/templates
+	cat udica/udica/templates/base_container.cil udica/udica/templates/net_container.cil bottlerocket.cil > $@
+
 udica/udica/templates:
 	git clone https://github.com/containers/udica
 
@@ -27,7 +30,7 @@ uninstall-openshift3:
 uninstall-openshift4:
 	semodule -r gremlin gremlin-openshift4
 
-release:
+release: gremlin-openshift3.cil gremlin-openshift4.cil
 	mkdir -p selinux-policies-$(VERSION)
 	cp gremlin-openshift3.cil selinux-policies-$(VERSION)
 	cp gremlin-openshift4.cil selinux-policies-$(VERSION)
