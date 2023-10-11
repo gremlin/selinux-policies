@@ -27,46 +27,35 @@ Gremlin builds on the SELinux inheritance patterns set out in [containers/udica]
 ## Support
 
 | Policy Version | OpenShift 3.x | OpenShift 4.x |
-| -------------- | --------------| ------------- |
+|----------------| --------------| ------------- |
 | v0.0.1         | ✓             | ✘             |
 | v0.0.2         | ✓             | Issue with OpenShift +4.2 ([Issue #3](https://github.com/gremlin/selinux-policies/issues/3)) |
 | v0.0.3         | ✓             | ✓             |
+| v0.0.4         | ✓             | ✓             |
 
 ## Installation
 
 You can install the SELinux module by downloading from the [releases page][releases] (or via `curl`)
 
 ```shell
-curl -fsSL https://github.com/gremlin/selinux-policies/releases/download/v0.0.3/selinux-policies-v0.0.3.tar.gz -o selinux-policies-v0.0.3.tar.gz
-tar xzf selinux-policies-v0.0.3.tar.gz
-sudo semodule -i selinux-policies-v0.0.3/gremlin-openshift3.cil
+curl -fsSL https://github.com/gremlin/selinux-policies/releases/download/v0.0.3/selinux-policies-v0.0.4.tar.gz -o selinux-policies-v0.0.4.tar.gz
+tar xzf selinux-policies-v0.0.4.tar.gz
+sudo semodule -i selinux-policies-v0.0.4/gremlin-openshift3.cil
 ```
 
 You can follow the remaining subsections to install directly from source.
-
-### Install build tools
-
-```shell
-yum install git
-```
-
-### Build the SELinux policy
-
-```shell
-make gremlin-openshift3.cil
-```
 
 ### Install the SELinux module
 
 
 ```shell
-make install-openshift3
+make install-gremlin-container
 ```
 
 Or with `semodule` directly
 
 ```
-semodule -i gremlin-openshift3.cil
+semodule -i policies/gremlin-container.cil
 ```
 
 ## Configuration
